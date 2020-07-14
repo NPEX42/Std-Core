@@ -28,5 +28,5 @@ jobs:
     server-password: # optional
     # Path to where the settings.xml file will be written. Default is ~/.m2.
     settings-path: # optional
-    - name: Run a multi-line script
-      run:
+    - name: Run Javadoc
+    - run: javadoc std.core --subpackages
