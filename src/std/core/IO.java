@@ -88,6 +88,8 @@ public class IO {
 		}
 	}
 	
+	 
+	
 	public static int[] LoadSignedInts(File file) {
 		try(DataInputStream stream = new DataInputStream(new FileInputStream(file))) {
 			int[] buffer = new int[(int)file.length()];
@@ -99,6 +101,55 @@ public class IO {
 			return null;
 		}
 	}
+	
+	public static boolean SaveBytes(File file, byte[] data) {
+		try {file.createNewFile();} catch(IOException ioex) {return false;}
+		try(DataOutputStream stream = new DataOutputStream(new FileOutputStream(file))) {
+			for(byte i : data) {
+				stream.write(i);
+			}
+			return true;
+		} catch (IOException e) {
+			return false;
+		}
+	}
+	
+	public static boolean SaveShorts(File file, short[] data) {
+		try {file.createNewFile();} catch(IOException ioex) {return false;}
+		try(DataOutputStream stream = new DataOutputStream(new FileOutputStream(file))) {
+			for(short i : data) {
+				stream.write(i);
+			}
+			return true;
+		} catch (IOException e) {
+			return false;
+		}
+	}
+	
+	public static boolean SaveInts(File file, int[] data) {
+		try {file.createNewFile();} catch(IOException ioex) {return false;}
+		try(DataOutputStream stream = new DataOutputStream(new FileOutputStream(file))) {
+			for(int i : data) {
+				stream.write(i);
+			}
+			return true;
+		} catch (IOException e) {
+			return false;
+		}
+	}
+	
+	public static boolean SaveLongs(File file, long[] data) {
+		try {file.createNewFile();} catch(IOException ioex) {return false;}
+		try(DataOutputStream stream = new DataOutputStream(new FileOutputStream(file))) {
+			for(long i : data) {
+				stream.writeLong(i);
+			}
+			return true;
+		} catch (IOException e) {
+			return false;
+		}
+	}
+	
 	
 
 }
