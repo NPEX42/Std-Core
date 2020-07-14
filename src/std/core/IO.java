@@ -39,4 +39,66 @@ public class IO {
 			return false;
 		}
 	}
+	
+	public static byte[] LoadSignedBytes(File file) {
+		try(DataInputStream stream = new DataInputStream(new FileInputStream(file))) {
+			byte[] buffer = new byte[(int)file.length()];
+			for(int index = 0; index < buffer.length; index++) {
+				buffer[index] = stream.readByte();
+			}
+			return buffer;
+		} catch (IOException e) {
+			return null;
+		}
+	}
+	
+	public static int[] LoadUnsignedBytes(File file) {
+		try(DataInputStream stream = new DataInputStream(new FileInputStream(file))) {
+			int[] buffer = new int[(int)file.length()];
+			for(int index = 0; index < buffer.length; index++) {
+				buffer[index] = stream.readUnsignedByte();
+			}
+			return buffer;
+		} catch (IOException e) {
+			return null;
+		}
+	}
+	
+	public static short[] LoadSignedShorts(File file) {
+		try(DataInputStream stream = new DataInputStream(new FileInputStream(file))) {
+			short[] buffer = new short[(int)file.length()];
+			for(int index = 0; index < buffer.length; index++) {
+				buffer[index] = stream.readShort();
+			}
+			return buffer;
+		} catch (IOException e) {
+			return null;
+		}
+	}
+	
+	public static int[] LoadUnsignedShorts(File file) {
+		try(DataInputStream stream = new DataInputStream(new FileInputStream(file))) {
+			int[] buffer = new int[(int)file.length()];
+			for(int index = 0; index < buffer.length; index++) {
+				buffer[index] = stream.readUnsignedShort();
+			}
+			return buffer;
+		} catch (IOException e) {
+			return null;
+		}
+	}
+	
+	public static int[] LoadSignedInts(File file) {
+		try(DataInputStream stream = new DataInputStream(new FileInputStream(file))) {
+			int[] buffer = new int[(int)file.length()];
+			for(int index = 0; index < buffer.length; index++) {
+				buffer[index] = stream.readInt();
+			}
+			return buffer;
+		} catch (IOException e) {
+			return null;
+		}
+	}
+	
+
 }
