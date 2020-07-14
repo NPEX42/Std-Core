@@ -7,6 +7,7 @@ import java.util.ArrayList;
  * @author George Venn
  * <p> Format: {XX,VV}, Repeat Value VV,  XX Times.</p>
  */
+@Deprecated
 public class RLE {
 	public static byte[] CompressBytes(byte... data) {
 		ArrayList<Byte> output = new ArrayList<Byte>();
